@@ -23,23 +23,10 @@ class apache {
     require => Package['apache2'],
   }
 
-  file { "/etc/apache2/sites-available/default":
-    ensure => present,
-    source => "/vagrant/manifests/default",
-    require => Package['apache2'],
-  }
 
-  file { "/etc/apache2/sites-available/development_local":
-    ensure => present,
-    source => "/vagrant/manifests/development_local",
-    require => Package['apache2'],
-  }
 
-  file { "/etc/apache2/sites-enabled/development_local":
-    ensure => link,
-    target => "/etc/apache2/sites-available/development_local",
-    require => Package['apache2'],
-  }
+
+
 
   exec { 'echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn':
     require => Package['apache2'],
