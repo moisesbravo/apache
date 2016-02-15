@@ -1,7 +1,7 @@
 class apache::config (
-        $apache_owner_name = hiera('apache_owner_name'), #Valor de la variable Hiera
-        $apache_name_group = hiera('apache_name_group'), #Valor de la variable Hiera
-        $apache_dir_name = hiera('apache_dir_name'),
+        $apache_owner_name = "www-data", #hiera('apache_owner_name'), #Valor de la variable Hiera
+        $apache_name_group = "www-data", #hiera('apache_name_group'), #Valor de la variable Hiera
+        $apache_dir_name = "/var/www/index.html" #hiera('apache_dir_name'),
 ){
 
   file {'index.html':
