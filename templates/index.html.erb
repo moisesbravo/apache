@@ -1,0 +1,11 @@
+<% $machinenode = scope.lookupvar('apache::machinenode') %>
+<% $machineip = scope.lookupvar('apache::machineip') %>
+<% $machineos = scope.lookupvar('apache::machineos') %>
+<html>
+<body>
+<h1>Apache se encuentra corriendo</h1>
+<p>Nombre de la maquina: <%= $machinenode %></p>
+<p>Ip de la maquina: <%= $machineip %></p>
+<p>Sistema operativo: <%= $machineos %></p>
+</body>
+</html>
